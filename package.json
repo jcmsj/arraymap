@@ -1,11 +1,25 @@
 {
   "name": "@jcsj/arraymap",
-  "version": "0.1.0",
-  "private": "false",
+  "version": "0.0.2",
   "type": "module",
+
   "description": "Provides simple array features to the Map data structure",
-  "main": "index.js",
-  "keywords": ["Map", "Array"],
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcmsj/arraymap.git"
+  },
+  "keywords": [
+    "Map",
+    "Array"
+  ],
   "author": "Jean Carlo M. San Juan",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jcmsj/arraymap/issues"
+  },
+  "homepage": "https://github.com/jcmsj/arraymap#readme"
 }

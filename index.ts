@@ -1,7 +1,7 @@
 /**
  * Adds more array-like functionalities to the Map data structure.
  */
-export class EnhancedMap<K extends string, V> extends Map<K, V>{
+export class EnhancedMap<K, V> extends Map<K, V>{
     constructor(map:Map<K, V>|null = null) {
         super()
         if (map instanceof Map) {
@@ -13,10 +13,9 @@ export class EnhancedMap<K extends string, V> extends Map<K, V>{
 
     /**
      * Similar to Array.indexOf
-     * @param {String} key 
      * @returns An index-value pair
      */
-    pairOf(key:string):[number?, V?] {
+    pairOf(key:K):[number?, V?] {
         return pairOf(key, this);
     }
 
