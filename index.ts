@@ -44,11 +44,15 @@ export function pairOf(key:any, map:Map<any, any>): [number, any] {
  * @returns The key-val pair
  */
 export function at(n:number, map:Map<any, any>) {
+    const def = [undefined, undefined];
+    if (n < 0 || n >= map.size)
+        return def;
+
     let i = 0
     for (const pair of map) {
         if (n == i++)
             return pair;
     }
     
-    return [undefined, undefined]
+    return def;
 }
