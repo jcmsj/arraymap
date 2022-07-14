@@ -1,6 +1,8 @@
 {
   "name": "@jcsj/arraymap",
   "version": "0.1.0",
+  "private": "false",
+  "type": "module",
   "description": "Provides simple array features to the Map data structure",
   "main": "index.js",
   "keywords": ["Map", "Array"],
