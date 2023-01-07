@@ -2,14 +2,6 @@
  * Adds more array-like functionalities to the Map data structure.
  */
 export class EnhancedMap extends Map {
-    constructor(map = null) {
-        super();
-        if (map instanceof Map) {
-            for (const pair of map) {
-                this.set(...pair);
-            }
-        }
-    }
     /**
      * Similar to Array.indexOf
      * @param {String} key

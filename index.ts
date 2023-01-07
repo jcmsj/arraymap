@@ -2,35 +2,27 @@
  * Adds more array-like functionalities to the Map data structure.
  */
 export class EnhancedMap<K, V> extends Map<K, V>{
-    constructor(map:Map<K, V>|null = null) {
-        super()
-        if (map instanceof Map) {
-            for (const pair of map) {
-                this.set(...pair)
-            }
-        }
-    }
-
     /**
      * Similar to Array.indexOf
      * @returns An index-value pair
      */
-    pairOf(key:K):[number?, V?] {
+    pairOf(key:K):[number, V?] {
         return pairOf(key, this);
     }
 
     /**
      * @returns The key-value pair at index n
      */
-    at(n:number) {
+    at(n:number):[K?, V?] {
         return at(n, this)
     }
 }
 
 /**
  * @returns int-value pair.
+ * 
  */
-export function pairOf(key:any, map:Map<any, any>): [number, any] {
+export function pairOf<K,V>(key:any, map:Map<K, V>): [number, V?] {
     let i = 0;
     for (const [k, val] of map) {
         if (key == k)
@@ -43,16 +35,15 @@ export function pairOf(key:any, map:Map<any, any>): [number, any] {
 /**
  * @returns The key-val pair
  */
-export function at(n:number, map:Map<any, any>) {
-    const def = [undefined, undefined];
+export function at<K,V>(n:number, map:Map<K, V>):[K?, V?] {
     if (n < 0 || n >= map.size)
-        return def;
+        return [];
 
     let i = 0
     for (const pair of map) {
-        if (n == i++)
+        if (n === i++)
             return pair;
     }
     
-    return def;
+    return [];
 }
